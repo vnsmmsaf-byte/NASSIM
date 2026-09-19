@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilaser Casablanca | Centre Médico-Esthétique & Épilation Laser</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FAF7F2',
+                            100: '#F3EDE2',
+                            200: '#E6D7C3',
+                            300: '#D7BD9F',
+                            400: '#C7A27A',
+                            500: '#B88B5A',
+                            600: '#9A6F42',
+                            700: '#7B5431',
+                            800: '#5E3E23',
+                            900: '#432B18',
+                        },
+                        rosebeige: '#F4ECE6',
+                        darkaccent: '#1F1B18'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                        script: ['"Alex Brush"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #C7A27A 0%, #B88B5A 50%, #8C6237 100%);
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #C7A27A, #E6D7C3, #C7A27A) 1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(215, 189, 159, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #FAF7F2;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D7BD9F;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF7F2] text-darkaccent font-sans antialiased selection:bg-gold-200 selection:text-gold-900 custom-scrollbar">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-darkaccent text-gold-200 text-xs py-2 px-4 text-center font-medium tracking-wider flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>✨ Bienvenue chez <strong>Estilaser Casablanca</strong> — Sidi Moumen (Jawhara)</span>
+        <span class="hidden sm:inline text-gold-400">|</span>
+        <a href="https://wa.me/212600000000?text=Bonjour%20Estilaser,%20je%20souhaite%20prendre%20un%20rendez-vous" target="_blank" class="hidden sm:inline underline hover:text-white transition">Prenez rendez-vous directement sur WhatsApp</a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gold-200/60 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-white text-xl font-serif shadow-md group-hover:scale-105 transition-transform">
+                        E
+                    </div>
+                    <div>
+                        <span class="font-serif text-2xl font-bold tracking-wider text-darkaccent block leading-none">ESTILASER</span>
+                        <span class="text-[10px] tracking-[0.25em] text-gold-600 font-semibold uppercase block mt-1">Centre Médico-Esthétique</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-700">
+                    <a href="#accueil" class="hover:text-gold-600 transition">Accueil</a>
+                    <a href="#tarifs" class="hover:text-gold-600 transition">Tarifs Exacts</a>
+                    <a href="#laser" class="hover:text-gold-600 transition">Laser</a>
+                    <a href="#visage" class="hover:text-gold-600 transition">Soins Visage</a>
+                    <a href="#corps" class="hover:text-gold-600 transition">Minceur & Corps</a>
+                    <a href="#localisation" class="hover:text-gold-600 transition">Localisation</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="openBookingModal()" class="px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold tracking-wider uppercase transition shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Prendre RDV</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-2xl text-darkaccent p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gold-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#accueil" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Accueil</a>
+            <a href="#tarifs" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Grille des Tarifs</a>
+            <a href="#laser" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Épilation Laser</a>
+            <a href="#visage" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Soins Visage</a>
+            <a href="#corps" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Soins Corps</a>
+            <a href="#localisation" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium border-b border-gray-100">Localisation</a>
+            <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full mt-2 py-3 bg-emerald-600 text-white font-semibold rounded-xl text-center flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Réserver sur WhatsApp</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative bg-gradient-to-b from-rosebeige/50 via-white to-[#FAF7F2] pt-12 pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-100 border border-gold-300 text-gold-800 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-sparkles text-gold-600"></i>
+                        <span>Sublimez votre beauté naturelle</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-darkaccent leading-tight">
+                        L'Excellence Esthétique <br>
+                        <span class="text-gold-600 italic font-normal">à Casablanca</span>
+                    </h1>
+
+                    <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Épilation Laser Diode de haute précision, Soins Hydrafacial sur-mesure, Minceur & Madérothérapie. Découvrez une expérience de soin d'exception au cœur de Casablanca.
+                    </p>
+
+                    <!-- Feature Tags -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-medium text-gray-700">
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl shadow-sm border border-gold-100">
+                            <i class="fa-solid fa-shield-halved text-gold-500 text-sm"></i>
+                            <span>Sûr & Efficace</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl shadow-sm border border-gold-100">
+                            <i class="fa-solid fa-clock text-gold-500 text-sm"></i>
+                            <span>Résultats Durables</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-xl shadow-sm border border-gold-100">
+                            <i class="fa-solid fa-wand-magic-sparkles text-gold-500 text-sm"></i>
+                            <span>Peau Douce & Éclatante</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm tracking-wider uppercase transition shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Réserver un Soin sur WhatsApp</span>
+                        </button>
+                        <a href="#tarifs" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-gold-50 text-darkaccent font-semibold text-sm border border-gold-300 transition shadow-sm text-center">
+                            Consulter la Grille des Tarifs
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image Showcase Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Backdrop Ring -->
+                        <div class="absolute -top-4 -bottom-4 -left-4 -right-4 rounded-3xl bg-gradient-to-tr from-gold-200 to-rosebeige opacity-70 blur-lg -z-10"></div>
+
+                        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gold-200 p-3">
+                            <div class="relative rounded-2xl overflow-hidden aspect-[4/5]">
+                                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Soin Esthétique Estilaser Casablanca" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkaccent/80 via-transparent to-transparent"></div>
+                                
+                                <div class="absolute bottom-6 left-6 right-6 text-white space-y-2">
+                                    <div class="inline-block px-3 py-1 rounded-full bg-gold-500/90 backdrop-blur-md text-xs font-semibold uppercase tracking-wider">
+                                        Offre Spéciale Laser
+                                    </div>
+                                    <h3 class="font-serif text-2xl font-bold">Corps Complet Laser</h3>
+                                    <p class="text-xs text-gold-100">Épilation définitive avec technologie haute performance</p>
+                                    <div class="pt-2 flex items-baseline gap-3">
+                                        <span class="text-3xl font-bold text-white">1500 Dh</span>
+                                        <span class="text-xs text-gold-200">/ la séance</span>
+                                        <span class="text-xs bg-emerald-500/80 px-2 py-0.5 rounded text-white font-medium">Pack 5: 6000 Dh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gold-100 hidden sm:flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-gold-100 flex items-center justify-center text-gold-600 text-xl font-bold">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 font-medium">Satisfaction Cliente</div>
+                                <div class="text-sm font-bold text-darkaccent">Quartier Jawhara, Sidi Moumen</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Navigation & Filter Section -->
+    <section id="tarifs" class="py-16 bg-white border-y border-gold-200/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="font-script text-3xl text-gold-600 block">Nos Tarifs Officiels</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-darkaccent">Grille Tarifaire Transparente & Complète</h2>
+                <p class="text-gray-600 text-sm sm:text-base">Retrouvez les prix exacts de tous nos traitements esthétiques. Profitez de nos packs avantageux pour des résultats optimaux.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                <button onclick="filterCategory('all')" id="btn-all" class="category-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all bg-gold-600 text-white shadow-md">
+                    Toutes nos prestations
+                </button>
+                <button onclick="filterCategory('laser')" id="btn-laser" class="category-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all bg-rosebeige hover:bg-gold-100 text-darkaccent">
+                    ✨ Épilation Laser
+                </button>
+                <button onclick="filterCategory('visage')" id="btn-visage" class="category-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all bg-rosebeige hover:bg-gold-100 text-darkaccent">
+                    🌸 Soins Hydrafacial & Visage
+                </button>
+                <button onclick="filterCategory('corps')" id="btn-corps" class="category-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all bg-rosebeige hover:bg-gold-100 text-darkaccent">
+                    🌿 Amincissement & Corps
+                </button>
+                <button onclick="filterCategory('regard')" id="btn-regard" class="category-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide transition-all bg-rosebeige hover:bg-gold-100 text-darkaccent">
+                    💄 Microblading & Lèvres
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 1: Épilation Laser -->
+    <section id="laser" class="section-block py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-category="laser">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-200/80">
+            
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-gold-100">
+                <div class="space-y-2">
+                    <div class="inline-flex items-center gap-2 text-gold-600 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>Épilation Définitive Au Laser</span>
+                    </div>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-darkaccent">Zone par Zone & Packs Avantageux</h3>
+                    <p class="text-gray-500 text-xs sm:text-sm">Une peau lisse, douce et durable grâce à notre technologie laser avancée.</p>
+                </div>
+                
+                <div class="flex items-center gap-4 bg-rosebeige/60 p-3 rounded-2xl border border-gold-100">
+                    <div class="w-10 h-10 rounded-full bg-gold-600 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-semibold text-darkaccent">Pack 5 Séances</div>
+                        <div class="text-[11px] text-gray-500">Économisez sur la cure complète</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Table Grid for Laser -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <!-- Individual Items -->
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Visage</h4>
+                        <p class="text-xs text-gray-500">Zone du visage complète</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">400 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Duvet</h4>
+                        <p class="text-xs text-gray-500">Lèvre supérieure / Duvet</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">150 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Mouton</h4>
+                        <p class="text-xs text-gray-500">Menton / Zone ciblée</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">150 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Duvet + Mouton</h4>
+                        <p class="text-xs text-gray-500">Combo lèvre & menton</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">300 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1200 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Cou</h4>
+                        <p class="text-xs text-gray-500">Zone du cou</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">150 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Aisselles</h4>
+                        <p class="text-xs text-gray-500">Aisselles complètes</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">200 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 800 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Bras</h4>
+                        <p class="text-xs text-gray-500">Bras entiers</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">500 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 2000 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Avant-Bras</h4>
+                        <p class="text-xs text-gray-500">Demi-bras / Avant-bras</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">400 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Dos</h4>
+                        <p class="text-xs text-gray-500">Dos complet</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">250 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1000 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Ventre</h4>
+                        <p class="text-xs text-gray-500">Zone de l'abdomen</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">250 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1000 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Fesses</h4>
+                        <p class="text-xs text-gray-500">Zone des fesses</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">200 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 800 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Maillot</h4>
+                        <p class="text-xs text-gray-500">Maillot intégral / échancré</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">400 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 1600 Dh</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 rounded-2xl bg-[#FAF7F2] hover:bg-gold-50/80 border border-gold-100/80 transition md:col-span-2">
+                    <div>
+                        <h4 class="font-medium text-darkaccent text-sm">Bords de Maillot</h4>
+                        <p class="text-xs text-gray-500">Contours maillot classique</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-base font-bold text-gold-700">200 Dh <span class="text-xs font-normal text-gray-500">/ séance</span></div>
+                        <div class="text-xs text-emerald-700 font-semibold">Pack 5 : 800 Dh</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Grand Banner Promo Corps Complet -->
+            <div class="mt-8 bg-gradient-to-r from-gold-800 via-gold-700 to-gold-900 rounded-2xl p-6 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+                <div class="space-y-1 text-center sm:text-left">
+                    <span class="bg-gold-500/40 text-gold-200 text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-gold-400/30 inline-block mb-1">⭐ Forfait Star Estilaser</span>
+                    <h4 class="font-serif text-2xl font-bold">Corps Complet (Épilation Laser)</h4>
+                    <p class="text-xs text-gold-100 font-light">Une tranquillité absolue avec notre formule globale corps complet.</p>
+                </div>
+                <div class="text-center sm:text-right bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/20">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-white">1500 Dh <span class="text-xs font-normal text-gold-200">/ séance</span></div>
+                    <div class="text-xs text-emerald-300 font-bold mt-1">Pack 5 Séances : 6000 Dh</div>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button onclick="openBookingModal('Laser')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs uppercase tracking-wider transition shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Réserver ma séance Laser</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: Soins Visage & Hydrafacial -->
+    <section id="visage" class="section-block py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-category="visage">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-200/80">
+            
+            <div class="pb-8 border-b border-gold-100 space-y-2">
+                <div class="inline-flex items-center gap-2 text-gold-600 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>Soins Hydrafacial & Esthétique Visage</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-darkaccent">Éclat, Hydratation & Rajeunissement</h3>
+                <p class="text-gray-500 text-xs sm:text-sm">Soins profonds réhydratants, peeling carbone et traitements de rajeunissement cutané.</p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Soin Visage</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Mini Soin Éclat</h4>
+                        <p class="text-xs text-gray-500 mt-1">Nettoyage coup d'éclat express pour raviver le teint.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">250 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Soin Visage</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Soin Éclat</h4>
+                        <p class="text-xs text-gray-500 mt-1">Nettoyage en profondeur et hydratation essentielle.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">300 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Soin Visage</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Soin Éclat Profond</h4>
+                        <p class="text-xs text-gray-500 mt-1">Protocole complet nettoyant, purifiant et illuminateur.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">400 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Laser & Peeling</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Carbon Peel</h4>
+                        <p class="text-xs text-gray-500 mt-1">Peeling Hollywood au laser carbone pour resserrer les pores.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">300 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Combo Premium</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Soin + Carbon</h4>
+                        <p class="text-xs text-gray-500 mt-1">Soin du visage complet combiné au Carbon Peel laser.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">500 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Microneedling</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Microneedling</h4>
+                        <p class="text-xs text-gray-500 mt-1">Stimulation du collagène pour atténuer cicatrices et taches.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">600 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Tenseur & Anti-Âge</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Fils de Collagène</h4>
+                        <p class="text-xs text-gray-500 mt-1">Lifting sans chirurgie pour lisser les rides profondes.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">4000 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Soin Régénérant</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Plasma Gold</h4>
+                        <p class="text-xs text-gray-500 mt-1">Traitement régénérant intense pour un teint lumineux.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">600 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Soin Remplisseur</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Filler Powder</h4>
+                        <p class="text-xs text-gray-500 mt-1">Soin combleur de rides et repulpant cutané.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">600 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-[#FAF7F2] border border-gold-100/80 flex flex-col justify-between hover:shadow-md transition sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <span class="text-[10px] font-bold text-gold-600 uppercase tracking-widest">Hydratation Profonde</span>
+                        <h4 class="font-serif text-lg font-bold text-darkaccent mt-1">Skinbooster</h4>
+                        <p class="text-xs text-gray-500 mt-1">Hydratation intense en profondeur pour repulper la peau.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gold-200/40 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif fixe</span>
+                        <span class="text-lg font-bold text-gold-700">1500 Dh</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-8 text-center">
+                <button onclick="openBookingModal('Soin Visage')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs uppercase tracking-wider transition shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Réserver un Soin du Visage</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: Amincissement & Corps -->
+    <section id="corps" class="section-block py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-category="corps">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-200/80">
+            
+            <div class="pb-8 border-b border-gold-100 space-y-2">
+                <div class="inline-flex items-center gap-2 text-gold-600 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-[#fa-child]"></i>
+                    <span>Amincissement, Sculpting & Massage</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-darkaccent">Remodelage Corporel & Bien-Être</h3>
+                <p class="text-gray-500 text-xs sm:text-sm">Combats la cellulite, raffermit la silhouette et détend le corps.</p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Amincissement Card -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-weight-scale"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Amincissement</h4>
+                        <p class="text-xs text-gray-500 mt-1">Séances de traitement minceur ciblé pour réduire les mensurations.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">1 Séance</span>
+                            <span class="font-bold text-darkaccent">300 Dh</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm mt-1">
+                            <span class="text-emerald-700 font-medium">Pack 10 Séances</span>
+                            <span class="font-bold text-emerald-700">2500 Dh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Madérothérapie Card -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Madérothérapie</h4>
+                        <p class="text-xs text-gray-500 mt-1">Massage traditionnel au bois pour casser les cellules graisseuses et lisser la peau.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">1 Séance</span>
+                            <span class="font-bold text-darkaccent">150 Dh</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm mt-1">
+                            <span class="text-emerald-700 font-medium">Pack 10 Séances</span>
+                            <span class="font-bold text-emerald-700">2000 Dh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lifting Card -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-arrows-up-to-line"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Lifting Corporel</h4>
+                        <p class="text-xs text-gray-500 mt-1">Stimulation du relâchement cutané pour raffermir les zones ciblées.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60">
+                        <div class="flex items-center justify-between text-sm">
+                            <span class="text-gray-500">1 Séance</span>
+                            <span class="font-bold text-darkaccent">150 Dh</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm mt-1">
+                            <span class="text-emerald-700 font-medium">Pack 10 Séances</span>
+                            <span class="font-bold text-emerald-700">1000 Dh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pressothérapie -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Pressothérapie</h4>
+                        <p class="text-xs text-gray-500 mt-1">Draine les toxines, stimule la circulation et élimine les jambes lourdes.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif la séance</span>
+                        <span class="text-xl font-bold text-gold-700">200 Dh</span>
+                    </div>
+                </div>
+
+                <!-- Hijama -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-hand-holding-medical"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Hijama</h4>
+                        <p class="text-xs text-gray-500 mt-1">Thérapie traditionnelle par ventouses hygiéniques et relaxantes.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif la séance</span>
+                        <span class="text-xl font-bold text-gold-700">200 Dh</span>
+                    </div>
+                </div>
+
+                <!-- Massage Relaxant -->
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-lg mb-3">
+                            <i class="fa-solid fa-hands"></i>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-darkaccent">Massage Relaxant</h4>
+                        <p class="text-xs text-gray-500 mt-1">Massage corporel relaxant aux huiles essentielles pour dénouer les tensions.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60 flex items-center justify-between">
+                        <span class="text-xs text-gray-400">Tarif la séance</span>
+                        <span class="text-xl font-bold text-gold-700">300 Dh</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-8 text-center">
+                <button onclick="openBookingModal('Soin Corps')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs uppercase tracking-wider transition shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Réserver un Soin Minceur / Corps</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 4: Microblading & Lèvres -->
+    <section id="regard" class="section-block py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-category="regard">
+        <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gold-200/80">
+            
+            <div class="pb-8 border-b border-gold-100 space-y-2">
+                <div class="inline-flex items-center gap-2 text-gold-600 text-xs font-semibold uppercase tracking-wider">
+                    <i class="fa-solid fa-eye"></i>
+                    <span>Beauté du Regard & Sublimation des Lèvres</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-darkaccent">Microblading & Glaçage des Lèvres</h3>
+                <p class="text-gray-500 text-xs sm:text-sm">Maquillage semi-permanent haut de gamme pour intensifier votre regard et vos lèvres.</p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-serif text-xl font-bold text-darkaccent">Microblading Sourcils</h4>
+                            <span class="text-lg font-bold text-gold-700">600 Dh</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Dessin poil à poil semi-permanent pour des sourcils parfaitement structurés.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60 flex items-center justify-between">
+                        <span class="text-xs text-gray-600 font-medium">Retouche Microblading</span>
+                        <span class="text-sm font-bold text-emerald-700">300 Dh</span>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-[#FAF7F2] border border-gold-100 flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-serif text-xl font-bold text-darkaccent">Glaçage des Lèvres</h4>
+                            <span class="text-lg font-bold text-gold-700">400 Dh</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Pigmentation subtile et effet Candy Lips pour redonner de la couleur aux lèvres.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gold-200/60 flex items-center justify-between">
+                        <span class="text-xs text-gray-600 font-medium">Retouche Glaçage Lèvres</span>
+                        <span class="text-sm font-bold text-emerald-700">200 Dh</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-8 text-center">
+                <button onclick="openBookingModal('Microblading / Lèvres')" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs uppercase tracking-wider transition shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Prendre RDV pour Microblading / Lèvres</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Localisation Section -->
+    <section id="localisation" class="py-16 bg-rosebeige/40 border-t border-gold-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-gold-700 text-xs font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Notre Centre à Casablanca</span>
+                    </div>
+                    
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-darkaccent">Venez Nous Rendre Visite</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Le centre <strong>Estilaser Casablanca</strong> vous accueille dans un cadre moderne, hygiénique et apaisant au Quartier Jawhara, Sidi Moumen.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gold-100">
+                            <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkaccent text-sm">Adresse Précise</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Quartier Jawhara, Sidi Moumen, Casablanca, Maroc</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-white shadow-sm border border-gold-100">
+                            <div class="w-10 h-10 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-darkaccent text-sm">Horaires d'Ouverture</h4>
+                                <p class="text-xs text-gray-600 mt-0.5">Lundi — Samedi : 09:30 - 19:30</p>
+                                <p class="text-xs text-emerald-700 font-semibold">Dimanche : Sur rendez-vous uniquement</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="https://maps.google.com/?q=Quartier+Jawhara+Sidi+Moumen+Casablanca" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-darkaccent hover:bg-gold-800 text-white text-xs font-semibold uppercase tracking-wider transition shadow-md">
+                            <i class="fa-solid fa-diamond-turn-right text-gold-400"></i>
+                            <span>Ouvrir sur Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-3 rounded-3xl shadow-xl border border-gold-200 overflow-hidden">
+                        <div class="w-full h-80 sm:h-96 rounded-2xl bg-gray-200 relative overflow-hidden flex items-center justify-center">
+                            <!-- Visual Placeholder Map UI -->
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Carte Localisation Casablanca Sidi Moumen" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-darkaccent/40 flex items-center justify-center">
+                                <div class="bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl text-center max-w-xs border border-gold-300">
+                                    <div class="w-12 h-12 mx-auto rounded-full gold-gradient text-white flex items-center justify-center text-xl mb-3 shadow-md">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <h4 class="font-serif font-bold text-lg text-darkaccent">Estilaser Casablanca</h4>
+                                    <p class="text-xs text-gray-500 mt-1">Sidi Moumen - Jawhara</p>
+                                    <a href="https://maps.google.com/?q=Quartier+Jawhara+Sidi+Moumen+Casablanca" target="_blank" class="mt-4 block w-full py-2 bg-gold-600 text-white rounded-xl text-xs font-semibold hover:bg-gold-700 transition">
+                                        Itinéraire GPS
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-gold-200">
+            
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 flex items-center justify-center text-sm transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-darkaccent">Prendre Rendez-vous</h3>
+                <p class="text-xs text-gray-500">Choisissez votre prestation et envoyez votre demande directement sur WhatsApp.</p>
+            </div>
+
+            <form id="bookingForm" onsubmit="sendWhatsAppMessage(event)" class="mt-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Votre Nom & Prénom</label>
+                    <input type="text" id="clientName" required placeholder="Ex: Chaimaa" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:border-gold-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Prestation Souhaitée</label>
+                    <select id="clientService" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:border-gold-500">
+                        <option value="Épilation Laser - Corps Complet (1500 Dh)">Épilation Laser - Corps Complet (1500 Dh)</option>
+                        <option value="Épilation Laser - Zone Spécifique">Épilation Laser - Zone Spécifique</option>
+                        <option value="Soin Hydrafacial / Visage">Soin Hydrafacial / Visage</option>
+                        <option value="Soin Minceur / Madérothérapie">Soin Minceur / Madérothérapie</option>
+                        <option value="Microblading / Glaçage des Lèvres">Microblading / Glaçage des Lèvres</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Jour Souhaité</label>
+                    <input type="date" id="clientDate" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:outline-none focus:border-gold-500">
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm uppercase tracking-wider transition shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Envoyer sur WhatsApp</span>
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-darkaccent text-white py-12 border-t border-gold-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-gray-800">
+                
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full gold-gradient flex items-center justify-center text-white font-serif font-bold text-sm">E</div>
+                        <span class="font-serif text-xl font-bold tracking-wider">ESTILASER</span>
+                    </div>
+                    <p class="text-xs text-gray-400 font-light leading-relaxed">
+                        Votre destination beauté privilégiée à Casablanca Sidi Moumen. Expertise, écoute et résultats naturels.
+                    </p>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-serif font-semibold text-gold-300 text-sm">Navigation Rapide</h4>
+                    <ul class="text-xs text-gray-400 space-y-1.5">
+                        <li><a href="#laser" class="hover:text-gold-200">Tarifs Épilation Laser</a></li>
+                        <li><a href="#visage" class="hover:text-gold-200">Soins Hydrafacial</a></li>
+                        <li><a href="#corps" class="hover:text-gold-200">Madérothérapie & Minceur</a></li>
+                        <li><a href="#regard" class="hover:text-gold-200">Microblading & Lèvres</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-serif font-semibold text-gold-300 text-sm">Suivez-nous</h4>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-gold-600 flex items-center justify-center text-white transition text-sm"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-gold-600 flex items-center justify-center text-white transition text-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/212600000000" target="_blank" class="w-9 h-9 rounded-full bg-emerald-600 hover:bg-emerald-700 flex items-center justify-center text-white transition text-sm"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-[11px] text-gray-500 pt-2">Jawhara, Sidi Moumen — Casablanca</p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 text-center text-[11px] text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <span>&copy; 2026 Estilaser Casablanca. Tous droits réservés.</span>
+                <span>Votre beauté, notre priorité 🌸</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Sticky WhatsApp Button -->
+    <a href="https://wa.me/212600000000?text=Bonjour%20Estilaser%20Casablanca,%20je%20souhaite%20des%20informations%20sur%20vos%20tarifs" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-transform group">
+        <i class="fa-brands fa-whatsapp"></i>
+        <!-- Notification badge -->
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white flex items-center justify-center text-[9px] font-bold">1</span>
+    </a>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Category Filter Functionality
+        function filterCategory(category) {
+            // Update active button state
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-600', 'text-white', 'shadow-md');
+                btn.classList.add('bg-rosebeige', 'text-darkaccent');
+            });
+
+            const activeBtn = document.getElementById('btn-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-rosebeige', 'text-darkaccent');
+                activeBtn.classList.add('bg-gold-600', 'text-white', 'shadow-md');
+            }
+
+            // Show/Hide sections
+            const sections = document.querySelectorAll('.section-block');
+            sections.forEach(sec => {
+                if (category === 'all' || sec.getAttribute('data-category') === category) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Booking Modal Toggle
+        function openBookingModal(presetService = '') {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.remove('hidden');
+            if (presetService) {
+                const select = document.getElementById('clientService');
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value.includes(presetService)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        // Form WhatsApp Submission
+        function sendWhatsAppMessage(e) {
+            e.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('clientService').value;
+            const date = document.getElementById('clientDate').value;
+
+            const text = `Bonjour Estilaser Casablanca, Je m'appelle ${name}. Je souhaite réserver la prestation: ${service} pour le ${date}. Merci de me confirmer la disponibilité.`;
+            const encodedText = encodeURIComponent(text);
+            
+            window.open(`https://wa.me/212600000000?text=${encodedText}`, '_blank');
+            closeBookingModal();
+        }
+    </script>
+</body>
+</html>
